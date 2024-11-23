@@ -107,7 +107,7 @@ Players in sitatuions where their play doesn't affect winning adds risk due to p
  
  1.1) PLayers on the left side of the chart are the ones to avoid while players on the right side are the ones who have a higher usage(Touch the ball)
  
- 1.2) Dark blue dots represent players with littl to no injury history
+ 1.2) Dark blue dots represent players with little to no injury history
  
  1.3) Gren dots reperesent players with high probability to miss games.
  
