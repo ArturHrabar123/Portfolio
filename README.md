@@ -1,8 +1,8 @@
 # NBA Fantasy Draft Tool - PowerBI
 
-### Dashboard Link :https://app.powerbi.com/view?r=eyJrIjoiZTUyZmRmMDktYmU5OC00YWJmLWIxZmMtOGE5ZDFjNTI1NDUzIiwidCI6ImI1MmJlNDcxLWY3ZjEtNDdiNC1hODc5LTBjNzk5YmI1M2RiNSIsImMiOjZ9&pageName=ReportSection33f1e9a18d0687ee0e36
+### Dashboard Link :[https://app.powerbi.com/view?r=eyJrIjoiZTUyZmRmMDktYmU5OC00YWJmLWIxZmMtOGE5ZDFjNTI1NDUzIiwidCI6ImI1MmJlNDcxLWY3ZjEtNDdiNC1hODc5LTBjNzk5YmI1M2RiNSIsImMiOjZ9&pageName=ReportSection33f1e9a18d0687ee0e36](https://app.powerbi.com/view?r=eyJrIjoiNzVjODhlN2EtOGM3Ny00ZmNmLWJmZTktYWZiZDRjYTk0OGQ5IiwidCI6IjgzYWVlZjdjLWMzMTAtNDdmNS04ZDRjLWVkZjRiYTEzZThhNSIsImMiOjZ9&pageName=02b384dc791af01ae05e)
 
-https://app.powerbi.com/view?r=eyJrIjoiNzVjODhlN2EtOGM3Ny00ZmNmLWJmZTktYWZiZDRjYTk0OGQ5IiwidCI6IjgzYWVlZjdjLWMzMTAtNDdmNS04ZDRjLWVkZjRiYTEzZThhNSIsImMiOjZ9
+
 ## Problem Statement
 
 This dashboard helps the user understand the fantasy value of a player. It helps the user know if they are selecting the most valuable point getter based on their draft position and the risk associated. Through different ratings, they get to know their players risk before they select them in the draft, & thus they can improve their ability to score points week to week and produce wins. It also lets them know the volatiltiy in a players game scoring, thus by using this dashboard they are able to see the consitstency of players and can focus on building a sustainable team over the course of the season and produce more wins.
