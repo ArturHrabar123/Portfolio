@@ -10,7 +10,7 @@ This project analyzes relocation suitability across cities in San Diego County u
 
 The goal is to provide a data-driven framework for evaluating where to live based on affordability, safety, and access to amenities. The final output is an interactive Power BI dashboard supported by a structured SQL and Power Query data pipeline.
 
-Objectives
+## Objectives
 
 Identify high-value cities for relocation
 
@@ -20,7 +20,7 @@ Build a composite relocation score
 
 Demonstrate end-to-end analytics workflow for portfolio use
 
-Data Sources
+## Data Sources
 
 Rental Data
 
@@ -56,7 +56,7 @@ Build relationships and calculated measures in Power BI
 
 Create normalized scoring model for city ranking
 
-Scoring Model
+## Scoring Model
 
 Each city receives a composite Relocation Score based on:
 
@@ -78,7 +78,7 @@ Escondido presents a balanced option across all three factors
 
 These results illustrate the trade-offs between cost, safety, and convenience when relocating.
 
-Dashboard Features
+##Dashboard Features
 
 City ranking matrix with composite score
 
@@ -92,7 +92,7 @@ KPI indicators for affordability, safety, and amenities
 
 Cross-filtering across all report elements
 
-Tools and Technologies
+##Tools and Technologies
 
 Power BI
 
@@ -104,22 +104,6 @@ DAX
 
 REST API (RentCast)
 
-Project Structure
-/data
-  rentals_raw.csv
-  crime_raw.csv
-  business_raw.csv
-
-/sql
-  staging_queries.sql
-  transformation_views.sql
-
-/powerbi
-  san_diego_relocation.pbix
-
-/docs
-  methodology.md
-  data_sources.md
 
 Use Case
 
