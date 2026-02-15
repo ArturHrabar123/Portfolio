@@ -1,4 +1,4 @@
-###San Diego Relocation Intelligence Dashboard
+# San Diego Relocation Intelligence Dashboard
 
 ### Dashboard Link :[https://app.powerbi.com/view?r=eyJrIjoiZTUyZmRmMDktYmU5OC00YWJmLWIxZmMtOGE5ZDFjNTI1NDUzIiwidCI6ImI1MmJlNDcxLWY3ZjEtNDdiNC1hODc5LTBjNzk5YmI1M2RiNSIsImMiOjZ9&pageName=ReportSection33f1e9a18d0687ee0e36](https://app.powerbi.com/view?r=eyJrIjoiNzVjODhlN2EtOGM3Ny00ZmNmLWJmZTktYWZiZDRjYTk0OGQ5IiwidCI6IjgzYWVlZjdjLWMzMTAtNDdmNS04ZDRjLWVkZjRiYTEzZThhNSIsImMiOjZ9&pageName=02b384dc791af01ae05e)
 
@@ -32,7 +32,7 @@ The output is a ranked view of cities based on overall relocation value.
 
 ## Data Sources
 
-# Rental Data
+### Rental Data
 
 Source: RentCast API
 
@@ -42,7 +42,7 @@ Implemented pagination to get past the 500-row limit
 
 Used to calculate median rent and affordability scores
 
-# Crime Data
+### Crime Data
 
 Source: San Diego Police Department Open Data
 
@@ -52,7 +52,7 @@ Built a crime rate per 100,000 residents measure in DAX
 
 Used as the safety component of the model
 
-# Business / Amenities
+### Business / Amenities
 
 Source: Public business listings dataset
 
@@ -85,7 +85,7 @@ Amenities → Business density and category coverage
 
 These are weighted and combined to rank cities based on overall livability.
 
-##Key Takeaways
+## Key Takeaways
 
 Spring Valley stands out for affordability while staying within acceptable safety levels
 
