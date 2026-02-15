@@ -3,115 +3,140 @@
 ### Dashboard Link :[https://app.powerbi.com/view?r=eyJrIjoiZTUyZmRmMDktYmU5OC00YWJmLWIxZmMtOGE5ZDFjNTI1NDUzIiwidCI6ImI1MmJlNDcxLWY3ZjEtNDdiNC1hODc5LTBjNzk5YmI1M2RiNSIsImMiOjZ9&pageName=ReportSection33f1e9a18d0687ee0e36](https://app.powerbi.com/view?r=eyJrIjoiNzVjODhlN2EtOGM3Ny00ZmNmLWJmZTktYWZiZDRjYTk0OGQ5IiwidCI6IjgzYWVlZjdjLWMzMTAtNDdmNS04ZDRjLWVkZjRiYTEzZThhNSIsImMiOjZ9&pageName=02b384dc791af01ae05e)
 
 
-## Problem Statement
+San Diego Relocation Intelligence Dashboard
+Overview
 
-This dashboard helps the user understand the fantasy value of a player. It helps the user know if they are selecting the most valuable point getter based on their draft position and the risk associated. Through different ratings, they get to know their players risk before they select them in the draft, & thus they can improve their ability to score points week to week and produce wins. It also lets them know the volatiltiy in a players game scoring, thus by using this dashboard they are able to see the consitstency of players and can focus on building a sustainable team over the course of the season and produce more wins.
+This project analyzes relocation suitability across cities in San Diego County using rental market data, crime statistics, and business density.
 
-Since, the number of available good starting players accross the five postions is not even, the user must draft the less available position stars first before going towards the best player at a more available position. 
+The goal is to provide a data-driven framework for evaluating where to live based on affordability, safety, and access to amenities. The final output is an interactive Power BI dashboard supported by a structured SQL and Power Query data pipeline.
 
-Also since injuries are a factor that can affect winning opportunity, the user can factor in less risky options during the course of the draft.
+Objectives
 
+Identify high-value cities for relocation
 
-### Steps followed 
+Quantify trade-offs between rent, safety, and amenities
 
-Steps:
+Build a composite relocation score
 
-Step 1: Data Collection
+Demonstrate end-to-end analytics workflow for portfolio use
 
-Downloaded two CSV files containing NBA seasonal statistics from BasketballReference.com.
+Data Sources
 
-Step 2: Database Preparation
+Rental Data
 
-Created two blank tables in SQL Server Management Studio (SSMS), ensuring column structures matched the CSV files.
-Imported the data from the CSV files into these SQL tables.
+Source: RentCast API
 
-Step 3: Data Integration
+Scope: 2-bedroom rental listings within a 70-mile radius of San Diego
 
-Wrote SQL queries to merge the two datasets, using the player name as the primary key for joining.
+Method: API pagination to exceed the 500-row response limit
 
-Step 4: Fantasy Points Calculation
+Crime Data
 
-Incorporated custom fantasy league point calculations into the merged dataset:
-1 NBA point = 0.6 fantasy points
-1 rebound = 0.75 fantasy points
-1 block or steal = 2 fantasy points
-1 assist = 1 fantasy point
-1 three-point shot = 0.5 bonus points
+Source: San Diego Police Department Open Data
 
-Step 5: Data Connection to Power BI
+Process: cleaned offense categories, filtered by year, calculated crime rate per 100,000 residents
 
-Connected the SQL query to a Power BI desktop file using the Direct Import method.
+Business Data
 
+Source: Public business listings dataset
 
-Step 6: Data Visualization
-Created a variety of visualizations in Power BI:
-Line Graphs: Displaying player performance trends over the season.
-Scatter Plots: Comparing fantasy points per game with games played.
-Position Group Analysis: Grouped players by position to determine which groups play the most games and score the highest fantasy points.
+Use: business counts by category and city to estimate amenity density
 
-Step 7: Filters and Slicers
+Data Processing Workflow
 
-Added dynamic filters and slicers in Power BI to allow users to view specific data points, such as:
-Player statistics by position
-Fantasy points trends by team
-Seasonal performance within a custom date range
+Extract rental data via REST API with pagination
 
-Step 8: Efficiency and Value Analysis
+Import crime and business datasets from CSV
 
-Analyzed player efficiency to identify potential high-value players who could excel with increased playing time.
-Measured the number of star players at each position to assess positional scarcity.
+Stage and transform data in SQL Server
 
-Step 9: Insights for Fantasy Drafts
+Clean and shape data using Power Query
 
-Determined the relative value of players by position, e.g., centers being more valuable than point guards due to positional scarcity.
-Provided actionable insights to guide player selection in fantasy drafts.
-           
- 
-        
- 
- Step 10 : The report was then published to Power BI Service.
- 
+Build relationships and calculated measures in Power BI
 
+Create normalized scoring model for city ranking
 
-# Insights
+Scoring Model
 
-A multi-page report was created on Power BI Desktop & it was then published to Power BI Service.
+Each city receives a composite Relocation Score based on:
 
-Following inferences can be drawn from the dashboard;
+Affordability Score – median rent relative to county baseline
 
-### [1] Fantasy Output by Position 
+Safety Score – crime rate per 100,000 residents
 
-   Average PPG for PG  = 21.29 
+Amenity Score – business density and category coverage
 
-   Average PPG for SG  = 19.46 
+Scores are normalized and combined using weighted aggregation to rank cities.
 
-   Average PPG for SF  = 20.91 
+Key Findings
 
-   Average PPG for PF  = 19.76 
+Spring Valley offers the strongest affordability with acceptable safety levels
 
-   Average PPG for C  = 20.54
+The City of San Diego provides the highest amenity density at a higher cost
 
+Escondido presents a balanced option across all three factors
 
-thus, the most points generate from PGs.
-           
-### [2] Lesser known players that Produce
+These results illustrate the trade-offs between cost, safety, and convenience when relocating.
 
- Least injury prone and highest output players were Domantas Sabonis and Nikola Jokic
+Dashboard Features
 
+City ranking matrix with composite score
 
-  ### [3] Players affect on winning 
-  
-Players in sitatuions where their play doesn't affect winning adds risk due to potential lineup shifts
+Crime trend analysis with year filtering
 
- ### [4] Some other insights
- 
- ### Durability
- 
- 1.1) PLayers on the left side of the chart are the ones to avoid while players on the right side are the ones who have a higher usage(Touch the ball)
- 
- 1.2) Dark blue dots represent players with little to no injury history
- 
- 1.3) Gren dots reperesent players with high probability to miss games.
- 
-thus, the dot furthest to the top right and with a dark blue color is the ideal selection.
- 
+Rental price distribution by location
+
+Business category density visuals
+
+KPI indicators for affordability, safety, and amenities
+
+Cross-filtering across all report elements
+
+Tools and Technologies
+
+Power BI
+
+SQL Server / SSMS
+
+Power Query
+
+DAX
+
+REST API (RentCast)
+
+Project Structure
+/data
+  rentals_raw.csv
+  crime_raw.csv
+  business_raw.csv
+
+/sql
+  staging_queries.sql
+  transformation_views.sql
+
+/powerbi
+  san_diego_relocation.pbix
+
+/docs
+  methodology.md
+  data_sources.md
+
+Use Case
+
+This project is designed for:
+
+Data analytics portfolio demonstration
+
+Relocation decision support
+
+Comparative city analysis
+
+Future Improvements
+
+Commute time and transportation scoring
+
+Salary-to-rent affordability ratios
+
+Time-series rent forecasting
+
+Power BI Service deployment
