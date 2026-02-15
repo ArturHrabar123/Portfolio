@@ -46,9 +46,7 @@ Used to calculate median rent and affordability scores
 
 Source: San Diego Police Department Open Data
 
-Cleaned and filtered to a single year for accurate rates
-
-Built a crime rate per 100,000 residents measure in DAX
+Cleaned and filtered to last 5 years for accurate rates
 
 Used as the safety component of the model
 
@@ -57,8 +55,6 @@ Used as the safety component of the model
 Source: Public business listings dataset
 
 Aggregated by category and city
-
-Used as a proxy for amenity density and service access
 
 ## Data Workflow
 
@@ -116,8 +112,6 @@ Power BI
 SQL Server / SSMS
 
 Power Query
-
-DAX
 
 REST API (RentCast)
 
