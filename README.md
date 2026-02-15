@@ -1,98 +1,115 @@
-# NBA Fantasy Draft Tool - PowerBI
+###San Diego Relocation Intelligence Dashboard
 
 ### Dashboard Link :[https://app.powerbi.com/view?r=eyJrIjoiZTUyZmRmMDktYmU5OC00YWJmLWIxZmMtOGE5ZDFjNTI1NDUzIiwidCI6ImI1MmJlNDcxLWY3ZjEtNDdiNC1hODc5LTBjNzk5YmI1M2RiNSIsImMiOjZ9&pageName=ReportSection33f1e9a18d0687ee0e36](https://app.powerbi.com/view?r=eyJrIjoiNzVjODhlN2EtOGM3Ny00ZmNmLWJmZTktYWZiZDRjYTk0OGQ5IiwidCI6IjgzYWVlZjdjLWMzMTAtNDdmNS04ZDRjLWVkZjRiYTEzZThhNSIsImMiOjZ9&pageName=02b384dc791af01ae05e)
 
 
-San Diego Relocation Intelligence Dashboard
-Overview
 
-This project analyzes relocation suitability across cities in San Diego County using rental market data, crime statistics, and business density.
+##Overview
 
-The goal is to provide a data-driven framework for evaluating where to live based on affordability, safety, and access to amenities. The final output is an interactive Power BI dashboard supported by a structured SQL and Power Query data pipeline.
+This project is a relocation analysis I built to answer a simple question:
 
-## Objectives
+Where are the best places to live in San Diego County when you factor in rent, safety, and access to amenities?
 
-Identify high-value cities for relocation
+Instead of relying on opinions, I pulled real data from an API and public sources, built a scoring model, and delivered the results in Power BI.
 
-Quantify trade-offs between rent, safety, and amenities
+This is an end-to-end analytics project that covers data ingestion, cleaning, modeling, DAX, and dashboard design.
 
-Build a composite relocation score
+##What This Project Shows
 
-Demonstrate end-to-end analytics workflow for portfolio use
+As a 3rd year data analyst, I wanted this project to reflect how I approach real problems:
 
-## Data Sources
+- Work with messy, real-world datasets
 
-Rental Data
+- Pull data from APIs and flat files
+
+- Build a structured SQL staging layer
+
+- Create normalized metrics instead of raw counts
+
+- Turn analysis into a decision-making tool
+
+The output is a ranked view of cities based on overall relocation value.
+
+##Data Sources
+
+#Rental Data
 
 Source: RentCast API
 
-Scope: 2-bedroom rental listings within a 70-mile radius of San Diego
+Pulled 2-bedroom listings within a 70-mile radius of San Diego
 
-Method: API pagination to exceed the 500-row response limit
+Implemented pagination to get past the 500-row limit
 
-Crime Data
+Used to calculate median rent and affordability scores
+
+#Crime Data
 
 Source: San Diego Police Department Open Data
 
-Process: cleaned offense categories, filtered by year, calculated crime rate per 100,000 residents
+Cleaned and filtered to a single year for accurate rates
 
-Business Data
+Built a crime rate per 100,000 residents measure in DAX
+
+Used as the safety component of the model
+
+#Business / Amenities
 
 Source: Public business listings dataset
 
-Use: business counts by category and city to estimate amenity density
+Aggregated by category and city
 
-Data Processing Workflow
+Used as a proxy for amenity density and service access
 
-Extract rental data via REST API with pagination
+##Data Workflow
+
+Extract rental data via REST API (paginated requests)
 
 Import crime and business datasets from CSV
 
 Stage and transform data in SQL Server
 
-Clean and shape data using Power Query
+Clean and shape data in Power Query
 
-Build relationships and calculated measures in Power BI
+Build relationships and measures in Power BI
 
-Create normalized scoring model for city ranking
+Normalize metrics and create a weighted relocation score
 
-## Scoring Model
+##Scoring Model
 
-Each city receives a composite Relocation Score based on:
+Each city gets a Relocation Score based on three normalized components:
 
-Affordability Score – median rent relative to county baseline
+Affordability → Median rent by city
+Safety → Crime rate by severity
 
-Safety Score – crime rate per 100,000 residents
+Amenities → Business density and category coverage
 
-Amenity Score – business density and category coverage
+These are weighted and combined to rank cities based on overall livability.
 
-Scores are normalized and combined using weighted aggregation to rank cities.
+##Key Takeaways
 
-Key Findings
+Spring Valley stands out for affordability while staying within acceptable safety levels
 
-Spring Valley offers the strongest affordability with acceptable safety levels
+The City of San Diego has the highest amenity density but also the highest rent
 
-The City of San Diego provides the highest amenity density at a higher cost
+Escondido offers the most balanced profile across all three factors
 
-Escondido presents a balanced option across all three factors
-
-These results illustrate the trade-offs between cost, safety, and convenience when relocating.
+The main insight is the trade-off between cost, safety, and convenience.
 
 ##Dashboard Features
 
-City ranking matrix with composite score
+Ranked city comparison using a composite score
 
-Crime trend analysis with year filtering
+Crime trend analysis with time filtering
 
-Rental price distribution by location
+Rental price distribution by city
 
-Business category density visuals
+Business density by category
 
-KPI indicators for affordability, safety, and amenities
+KPI cards for each scoring component
 
-Cross-filtering across all report elements
+Cross-filtering across all visuals
 
-##Tools and Technologies
+##Tools Used
 
 Power BI
 
@@ -104,23 +121,16 @@ DAX
 
 REST API (RentCast)
 
+##Why I Built This
 
-Use Case
+I’m currently a 3rd year data analyst, and this project was designed to reflect the kind of work I do in real environments:
 
-This project is designed for:
+- Pulling data from multiple sources
 
-Data analytics portfolio demonstration
+- Cleaning and modeling it properly
 
-Relocation decision support
+- Building metrics that actually mean something
 
-Comparative city analysis
+- Delivering a dashboard that supports a real decision
 
-Future Improvements
-
-Commute time and transportation scoring
-
-Salary-to-rent affordability ratios
-
-Time-series rent forecasting
-
-Power BI Service deployment
+In this case, the decision is where to live in San Diego based on data, not guesswork.
