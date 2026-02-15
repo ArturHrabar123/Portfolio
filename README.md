@@ -4,7 +4,7 @@
 
 
 
-##Overview
+## Overview
 
 This project is a relocation analysis I built to answer a simple question:
 
@@ -14,7 +14,7 @@ Instead of relying on opinions, I pulled real data from an API and public source
 
 This is an end-to-end analytics project that covers data ingestion, cleaning, modeling, DAX, and dashboard design.
 
-##What This Project Shows
+## What This Project Shows
 
 As a 3rd year data analyst, I wanted this project to reflect how I approach real problems:
 
@@ -30,9 +30,9 @@ As a 3rd year data analyst, I wanted this project to reflect how I approach real
 
 The output is a ranked view of cities based on overall relocation value.
 
-##Data Sources
+## Data Sources
 
-#Rental Data
+# Rental Data
 
 Source: RentCast API
 
@@ -42,7 +42,7 @@ Implemented pagination to get past the 500-row limit
 
 Used to calculate median rent and affordability scores
 
-#Crime Data
+# Crime Data
 
 Source: San Diego Police Department Open Data
 
@@ -52,7 +52,7 @@ Built a crime rate per 100,000 residents measure in DAX
 
 Used as the safety component of the model
 
-#Business / Amenities
+# Business / Amenities
 
 Source: Public business listings dataset
 
@@ -60,7 +60,7 @@ Aggregated by category and city
 
 Used as a proxy for amenity density and service access
 
-##Data Workflow
+## Data Workflow
 
 Extract rental data via REST API (paginated requests)
 
@@ -74,7 +74,7 @@ Build relationships and measures in Power BI
 
 Normalize metrics and create a weighted relocation score
 
-##Scoring Model
+## Scoring Model
 
 Each city gets a Relocation Score based on three normalized components:
 
@@ -95,7 +95,7 @@ Escondido offers the most balanced profile across all three factors
 
 The main insight is the trade-off between cost, safety, and convenience.
 
-##Dashboard Features
+## Dashboard Features
 
 Ranked city comparison using a composite score
 
@@ -109,7 +109,7 @@ KPI cards for each scoring component
 
 Cross-filtering across all visuals
 
-##Tools Used
+## Tools Used
 
 Power BI
 
@@ -121,7 +121,7 @@ DAX
 
 REST API (RentCast)
 
-##Why I Built This
+## Why I Built This
 
 I’m currently a 3rd year data analyst, and this project was designed to reflect the kind of work I do in real environments:
 
